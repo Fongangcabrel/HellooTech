@@ -199,7 +199,7 @@ const TR = {
     monitor_title: "Monitoring temps réel",
     monitor_live: "En ligne",
     monitor_keys: ["Uptime","Latence","Serveurs","Alertes"],
-    dash_title: "Rapport consolidé",
+    dash_title: "Tableau de bord KPI",
     dash_keys: ["Qualité données","Enregistrements","Tables sync","Anomalies"],
     dash_sync: "Dernière sync",
     datafusion_sub: "SQL + temps réel",
@@ -349,7 +349,7 @@ const TR = {
     monitor_title: "Real-time monitoring",
     monitor_live: "Online",
     monitor_keys: ["Uptime","Latency","Servers","Alerts"],
-    dash_title: "Consolidated report",
+    dash_title: "KPI Dashboard",
     dash_keys: ["Data quality","Records","Tables sync","Anomalies"],
     dash_sync: "Last sync",
     datafusion_sub: "SQL + real-time",
@@ -682,26 +682,36 @@ export default function HellooTech() {
                            position:"absolute",inset:0,
                            opacity:vizIdx===1?1:0,transform:vizIdx===1?"translateY(0)":"translateY(8px)",
                            transition:"opacity .45s ease,transform .45s ease",pointerEvents:vizIdx===1?"auto":"none"}}>
-                <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:18}}>
+                <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:14}}>
                   <div style={{display:"flex",alignItems:"center",gap:8}}>
-                    <BarChart2 size={16} color="#16A34A"/>
+                    <ClipboardList size={16} color={SKY_D}/>
                     <span style={{fontFamily:"Sora",fontWeight:600,fontSize:13,color:INK}}>{tr.dash_title}</span>
                   </div>
                   <span style={{fontSize:10,color:MUTED,background:SURFACE,borderRadius:6,padding:"3px 8px"}}>{tr.dash_sync} · 2m</span>
                 </div>
-                <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:10,marginBottom:18}}>
-                  {[["98.4%","#16A34A"],["1.2M",SKY_D],["8 / 8","#16A34A"],["0",MUTED]].map(([v,c],i)=>(
-                    <div key={i} style={{background:SURFACE,borderRadius:12,padding:"12px 14px"}}>
-                      <div style={{fontSize:10,color:MUTED,textTransform:"uppercase",letterSpacing:".06em",marginBottom:4}}>{tr.dash_keys[i]}</div>
-                      <div style={{fontFamily:"Sora",fontWeight:700,fontSize:18,color:c}}>{v}</div>
+                {/* En-tête colonnes */}
+                <div style={{display:"grid",gridTemplateColumns:"1fr 44px 52px",gap:6,padding:"0 2px 6px",borderBottom:`1px solid ${BORDER}`,marginBottom:4}}>
+                  {["Processus / KPI","Score",""].map((h,i)=>(
+                    <span key={i} style={{fontSize:9,fontWeight:600,color:MUTED,textTransform:"uppercase",letterSpacing:".07em",textAlign:i===1?"center":"left"}}>{h}</span>
+                  ))}
+                </div>
+                {/* Lignes KPI */}
+                {[
+                  ["Taux de présence","97.2%",97.2,"#16A34A"],
+                  ["Budget réalisé","88.5%",88.5,"#F59E0B"],
+                  ["Délai livraison","95.1%",95.1,"#16A34A"],
+                  ["Qualité données","99.0%",99.0,"#16A34A"],
+                  ["Taux de validation","82.3%",82.3,"#F59E0B"],
+                ].map(([label,val,pct,color],i,arr)=>(
+                  <div key={i} style={{display:"grid",gridTemplateColumns:"1fr 44px 52px",gap:6,alignItems:"center",
+                                       padding:"7px 2px",borderBottom:i<arr.length-1?`1px solid ${BORDER}`:"none"}}>
+                    <span style={{fontFamily:"Inter",fontSize:11,color:BODY,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{label}</span>
+                    <span style={{fontFamily:"Sora",fontWeight:700,fontSize:12,color,textAlign:"center"}}>{val}</span>
+                    <div style={{height:5,borderRadius:3,background:BORDER,overflow:"hidden"}}>
+                      <div style={{height:"100%",width:`${pct}%`,borderRadius:3,background:color,transition:"width .6s ease"}}/>
                     </div>
-                  ))}
-                </div>
-                <div style={{display:"flex",alignItems:"flex-end",gap:7,height:72,padding:"0 2px"}}>
-                  {[55,70,48,85,60,78,65,90,58,75].map((h,i)=>(
-                    <div key={i} className="bar" style={{flex:1,height:`${h}%`,background:i%2?"#16A34A":"#4ADE80",borderRadius:"5px 5px 0 0",animationDelay:`${i*0.06}s`}}/>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
 
             </div>
