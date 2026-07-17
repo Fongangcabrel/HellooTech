@@ -30,7 +30,7 @@ const PROJECTS = [
   { name:"KPIFlow",           cat:"web",    stack:["FastAPI","PostgreSQL","SQLAlchemy","Jinja2","Nginx","Debian"],                      url:null },
   { name:"VYNTIX",            cat:"data",   stack:["FastAPI","SQL Server","SQLite","Redis","WebSockets","Pandas"],                      url:null },
   { name:"SMARTY",            cat:"mobile", stack:["React Native","TypeScript","FastAPI","SQLAlchemy","PostgreSQL","Redis"],            url:null },
-  { name:"cocosecret.shop",   cat:"web",    stack:["PHP","Notchpay API"],                                                              url:"https://cocosecret.store/landing.php" },
+  { name:"cocosecret.shop",   cat:"web",    stack:["PHP","Notchpay API"],                                                              url:"https://cocosecret.shop" },
   { name:"FlowI",             cat:"reseau", stack:["Python","FastAPI","React"],                                                         url:null },
   { name:"SSAS",              cat:"data",   stack:["Python","Flask","SQL Server"],                                                      url:null },
   { name:"SCRIPX",            cat:"reseau", stack:["PowerShell"],                                                                       url:null },
@@ -119,7 +119,7 @@ const TR = {
 
     why_eyebrow: "Votre partenaire tech",
     why_h2: "Pourquoi choisir HellooTech ?",
-    why_p1: "HellooTech est fondée par un développeur Full-Stack · Data · Infrastructure passionné, basé à Douala-Yassa. Une maîtrise complète de la chaîne : React/TypeScript en front, FastAPI/Python en back, SQL Server/PostgreSQL/Redis en data, PowerShell & CI/CD pour l'infra.",
+    why_p1: "HellooTech est fondée par un développeur Full-Stack · Data · Infrastructure passionné, basé à Douala. Une maîtrise complète de la chaîne : React/TypeScript en front, FastAPI/Python en back, SQL Server/PostgreSQL/Redis en data, PowerShell & CI/CD pour l'infra.",
     why_p2: "De la conception au déploiement, chaque client est accompagné avec rigueur et transparence. 9+ projets livrés dont une plateforme SaaS en production — une expertise technique solide et une vision claire : des solutions numériques de qualité, accessibles à toutes les entreprises.",
     why_cta: "Discutons de votre projet",
     pillars: [
