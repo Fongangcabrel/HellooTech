@@ -34,7 +34,7 @@ const PROJECTS = [
   { name:"FlowI",             cat:"reseau", stack:["Python","FastAPI","React"],                                                         url:null },
   { name:"SSAS",              cat:"data",   stack:["Python","Flask","SQL Server"],                                                      url:null },
   { name:"SCRIPX",            cat:"reseau", stack:["PowerShell"],                                                                       url:null },
-  { name:"LovIT",             cat:"mobile", stack:["Python","MySQL"],                                                                   url:null },
+  { name:"Hospiconnect",      cat:"mobile", stack:["React Native","FastAPI","PostgreSQL"],                                              url:null },
   { name:"Coco Italia Beach", cat:"web",    stack:["PHP","Stripe API"],                                                                 url:"https://www.cocoitaliabeach.com" },
 ];
 const CAT_KEYS = ["all","web","mobile","data","reseau"];
@@ -139,9 +139,9 @@ const TR = {
       { desc:"Application de covoiturage PWA (v1) migrée vers une app mobile Android/iOS (v2). Interface admin web, backend temps réel, gestion des réservations et des utilisateurs." },
       { desc:"Plateforme e-commerce commercialisée avec succès. Interface dynamique, tunnel de vente hybride et paiement mobile intégré." },
       { desc:"Automatisation de procédures métier modulaire. Pipeline intelligent avec interface de suivi pour les workflows d'entreprise." },
-      { desc:"Système intelligent de gestion et d'alerte de stocks multi-magasins. Suivi en temps réel, alertes automatiques, export de rapports Excel et tableau de bord centralisé." },
+      { desc:"Application web de gestion d'inventaire multi-magasins. Interface de saisie des mouvements de stock en temps réel, alertes email automatiques en cas d'anomalie ou de rupture, génération et export de rapports Excel et tableau de bord centralisé." },
       { desc:"Script de monitoring réseau permettant de tester simultanément la connectivité de plusieurs équipements. Visibilité infrastructure et affichage de la latence en temps réel." },
-      { desc:"Application de rencontres full-stack avec authentification, messagerie et gestion de profils." },
+      { desc:"Application mobile de mise en relation entre patients et établissements de santé. Prise de rendez-vous en ligne, suivi des dossiers patients et gestion des soins à distance." },
       { desc:"Site événementiel officiel d'un beach resort à Parme, Italie. Billetterie en ligne sécurisée, génération de billets numériques avec QR code et formulaire de contact automatisé." },
     ],
 
@@ -289,9 +289,9 @@ const TR = {
       { desc:"Ride-hailing PWA (v1) migrated to an Android/iOS mobile app (v2). Web admin interface, real-time backend, booking and user management." },
       { desc:"Successfully commercialised e-commerce platform. Dynamic interface, hybrid sales funnel with integrated mobile payment." },
       { desc:"Modular business process automation. Intelligent pipeline with a tracking interface for enterprise workflows." },
-      { desc:"Smart multi-store inventory management and alert system. Real-time tracking, automatic alerts, Excel report export and centralised dashboard." },
+      { desc:"Multi-store inventory management web application. Real-time stock movement entry interface, automated email alerts for anomalies or stockouts, automatic Excel report generation and export, and centralised dashboard." },
       { desc:"Network monitoring script to simultaneously test the connectivity of multiple devices. Infrastructure visibility and real-time latency display." },
-      { desc:"Full-stack dating app with authentication, messaging and profile management." },
+      { desc:"Mobile app connecting patients and healthcare facilities. Online appointment booking, patient record tracking and remote care management." },
       { desc:"Official event website for a beach resort in Parma, Italy. Secure online ticketing, digital ticket generation with QR codes and automated contact form." },
     ],
 
