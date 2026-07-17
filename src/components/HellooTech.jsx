@@ -27,27 +27,31 @@ const PROC_ICONS   = [Search, PenTool, Code2, RocketIcon];
 const PILLAR_ICONS = [Award, Zap, Shield, Clock];
 
 const PROJECTS = [
-  { name:"VYNTIX",            cat:"data",   stack:["FastAPI","SQL Server","SQLite","Redis","WebSockets","Chart.js"],                    url:null },
+  { name:"KPIFlow",           cat:"web",    stack:["FastAPI","PostgreSQL","SQLAlchemy","Jinja2","Nginx","Debian"],                      url:null },
+  { name:"VYNTIX",            cat:"data",   stack:["FastAPI","SQL Server","SQLite","Redis","WebSockets","Pandas"],                      url:null },
   { name:"SMARTY",            cat:"mobile", stack:["React Native","TypeScript","FastAPI","SQLAlchemy","PostgreSQL","Redis"],            url:null },
-  { name:"cocosecret.store",  cat:"web",    stack:["PHP","MySQL","Notchpay","Flutterwave","WhatsApp API"],                              url:"https://cocosecret.store/landing.php" },
+  { name:"cocosecret.store",  cat:"web",    stack:["PHP","Notchpay API"],                                                              url:"https://cocosecret.store/landing.php" },
   { name:"FlowI",             cat:"reseau", stack:["Python","FastAPI","React"],                                                         url:null },
-  { name:"SSAS",              cat:"reseau", stack:["Python","ETL","SQL Server","Power BI"],                                             url:null },
+  { name:"SSAS",              cat:"data",   stack:["Python","Flask","SQL Server"],                                                      url:null },
   { name:"SCRIPX",            cat:"reseau", stack:["PowerShell"],                                                                       url:null },
   { name:"LovIT",             cat:"mobile", stack:["Python","MySQL"],                                                                   url:null },
-  { name:"Coco Italia Beach", cat:"web",    stack:["Web","Stripe","Events"],                                                            url:"https://www.cocoitaliabeach.com" },
+  { name:"Coco Italia Beach", cat:"web",    stack:["PHP","Stripe API"],                                                                 url:"https://www.cocoitaliabeach.com" },
 ];
 const CAT_KEYS = ["all","web","mobile","data","reseau"];
 
 const CERTS = [
-  "Microsoft Azure DB Administrator Associate","IBM Data Science Professional Certificate",
-  "BTS Informatique · IME 2025","React · TypeScript · FastAPI · Python",
-  "SQL Server · PostgreSQL · Redis · MySQL","Scrum · Kanban · UML · DevOps",
+  "IBM Data Science Professional Certificate · En cours",
+  "AWS Cloud Practitioner CLF-C02 · En cours",
+  "SAP Certified Associate · BTP · En cours",
+  "BTS Informatique · Génie logiciel · IME 2025",
+  "Licence Génie logiciel · Data Science · IME",
+  "Scrum · Kanban · Docker · CI/CD · DevOps",
 ];
 
 const LANGS = ["fr","en"];
 
-const TECH_NAMES   = ["Python","FastAPI","React.js","TypeScript","SQL Server","PostgreSQL","Redis","Power BI","PowerShell","Flutterwave","WebSockets","VMware"];
-const TECH_COLORS  = ["#3776AB","#009688","#61DAFB","#3178C6","#CC2927","#336791","#DC382D","#F2C811","#5391FE","#F5A623","#8B5CF6","#607078"];
+const TECH_NAMES   = ["Python","FastAPI","React.js","TypeScript","SQL Server","PostgreSQL","Redis","Power BI","PowerShell","Docker","WebSockets","Pandas"];
+const TECH_COLORS  = ["#3776AB","#009688","#61DAFB","#3178C6","#CC2927","#336791","#DC382D","#F2C811","#5391FE","#2496ED","#8B5CF6","#E70488"];
 
 /* ============================ TRANSLATIONS ============================ */
 const TR = {
@@ -75,9 +79,9 @@ const TR = {
       "Store clé-valeur en mémoire ultra-rapide pour le cache, les sessions et le pub/sub temps réel dans VYNTIX et SMARTY.",
       "Outil Microsoft de Business Intelligence : transforme les données brutes en dashboards interactifs et rapports visuels.",
       "Shell Microsoft pour l'automatisation système, la gestion réseau et le scripting DevOps — moteur de SCRIPX.",
-      "Passerelle de paiement pan-africaine acceptant Mobile Money, cartes et virements à travers toute l'Afrique.",
+      "Plateforme de conteneurisation — isolation des environnements, déploiements reproductibles et gestion simplifiée des dépendances en production.",
       "Protocole de communication bidirectionnel temps réel client-serveur — moteur du monitoring live dans VYNTIX.",
-      "Leader de la virtualisation : faire tourner plusieurs OS sur un seul serveur physique, base des infras cloud.",
+      "Bibliothèque Python d'analyse et manipulation de données — essentielle pour les pipelines ETL, le nettoyage et la préparation avant visualisation.",
     ],
 
     svc_eyebrow: "Nos services",
@@ -116,7 +120,7 @@ const TR = {
     why_eyebrow: "Votre partenaire tech",
     why_h2: "Pourquoi choisir HellooTech ?",
     why_p1: "HellooTech est fondée par un développeur Full-Stack · Data · Infrastructure passionné, basé à Douala-Yassa. Une maîtrise complète de la chaîne : React/TypeScript en front, FastAPI/Python en back, SQL Server/PostgreSQL/Redis en data, PowerShell & CI/CD pour l'infra.",
-    why_p2: "De la conception au déploiement, chaque client est accompagné avec rigueur et transparence. 8+ projets livrés, une expertise technique solide et une vision claire : des solutions numériques de qualité, accessibles à toutes les entreprises.",
+    why_p2: "De la conception au déploiement, chaque client est accompagné avec rigueur et transparence. 9+ projets livrés dont une plateforme SaaS en production — une expertise technique solide et une vision claire : des solutions numériques de qualité, accessibles à toutes les entreprises.",
     why_cta: "Discutons de votre projet",
     pillars: [
       { title:"Solutions sur mesure",  desc:"Chaque projet est unique. On adapte nos solutions à vos contraintes et ambitions." },
@@ -130,14 +134,15 @@ const TR = {
     proj_desc: "Une sélection de solutions conçues et déployées pour de vrais besoins métier.",
     categories: { all:"Tous", web:"Web & E-commerce", mobile:"Mobile & PWA", data:"Data & Monitoring", reseau:"Réseau & Automatisation" },
     projects: [
-      { desc:"Monitoring réseau hybride temps réel — FastAPI, SQL Server WAL, SQLite, WebSockets, Redis, Chart.js. Visibilité infrastructure en temps réel." },
-      { desc:"App ride-hailing complète : Web Admin + Mobile Android/iOS. React.js, React Native, TypeScript, FastAPI, SQLAlchemy, PostgreSQL, Redis, WebSockets." },
-      { desc:"Plateforme e-commerce vendue commercialement. PHP, MySQL, Notchpay, Flutterwave et intégration WhatsApp API." },
-      { desc:"Automatisation de procédures métier modulaire. Pipeline Python/FastAPI avec interface React pour les workflows d'entreprise." },
-      { desc:"Alertes stock automatisées et pipeline data analytique. ETL Python, consolidation SQL Server, reporting Power BI." },
-      { desc:"Monitoring multi-appareils réseau — BEETLE HERITAGE HOLDING. Script PowerShell : ping, latence temps réel, visibilité infra." },
-      { desc:"Application de rencontres full-stack avec authentification et gestion de profils. Backend Python, MySQL." },
-      { desc:"Site événementiel pour un beach resort à Parme, Italie. Billetterie Stripe, soirées DJ (Afrobeats, Coupé-décalé), piscine, karaoké et réservation B&B." },
+      { desc:"Plateforme SaaS interne de digitalisation des KPI, déployée en production chez BEETLE HERITAGE HOLDING. Cycle complet : définition, affectation, calcul automatique du score et validation multi-niveaux — en remplacement d'un suivi Excel manuel." },
+      { desc:"Système de monitoring d'infrastructure IT en temps réel. Architecture hybride avec traitement des données TTL pour une visibilité complète des serveurs, réseaux et services — reporting live et aide à la décision." },
+      { desc:"Application de covoiturage PWA (v1) migrée vers une app mobile Android/iOS (v2). Interface admin web, backend temps réel, gestion des réservations et des utilisateurs." },
+      { desc:"Plateforme e-commerce commercialisée avec succès. Interface dynamique, tunnel de vente hybride et paiement mobile intégré." },
+      { desc:"Automatisation de procédures métier modulaire. Pipeline intelligent avec interface de suivi pour les workflows d'entreprise." },
+      { desc:"Système intelligent de gestion et d'alerte de stocks multi-magasins. Suivi en temps réel, alertes automatiques, export de rapports Excel et tableau de bord centralisé." },
+      { desc:"Script de monitoring réseau permettant de tester simultanément la connectivité de plusieurs équipements. Visibilité infrastructure et affichage de la latence en temps réel." },
+      { desc:"Application de rencontres full-stack avec authentification, messagerie et gestion de profils." },
+      { desc:"Site événementiel officiel d'un beach resort à Parme, Italie. Billetterie en ligne sécurisée, génération de billets numériques avec QR code et formulaire de contact automatisé." },
     ],
 
     cert_eyebrow: "Compétences & certifications",
@@ -224,9 +229,9 @@ const TR = {
       "Ultra-fast in-memory key-value store for caching, sessions and real-time pub/sub — powering VYNTIX and SMARTY.",
       "Microsoft's Business Intelligence tool: turns raw data into interactive dashboards and visual reports.",
       "Microsoft's shell for system automation, network management and DevOps scripting — engine behind SCRIPX.",
-      "Pan-African payment gateway accepting Mobile Money, cards and transfers across the entire continent.",
+      "Containerisation platform — environment isolation, reproducible deployments and simplified dependency management in production.",
       "Bidirectional real-time client-server communication protocol — engine of the live monitoring in VYNTIX.",
-      "Virtualization leader: run multiple OS instances on one physical server — the foundation of cloud infrastructure.",
+      "Python data analysis and manipulation library — essential for ETL pipelines, data cleaning and preparation before visualization.",
     ],
 
     svc_eyebrow: "Our services",
@@ -265,7 +270,7 @@ const TR = {
     why_eyebrow: "Your tech partner",
     why_h2: "Why choose HellooTech?",
     why_p1: "HellooTech was founded by a passionate Full-Stack · Data · Infrastructure developer based in Douala-Yassa. He masters the full chain: React/TypeScript front-end, FastAPI/Python back-end, SQL Server/PostgreSQL/Redis for data, PowerShell & CI/CD for infrastructure.",
-    why_p2: "From design to deployment, every client is supported with rigour and transparency. 8+ projects delivered, solid technical expertise, and a clear vision: quality digital solutions accessible to businesses of all sizes.",
+    why_p2: "From design to deployment, every client is supported with rigour and transparency. 9+ projects delivered including a SaaS platform in production — solid technical expertise, and a clear vision: quality digital solutions accessible to businesses of all sizes.",
     why_cta: "Discuss your project",
     pillars: [
       { title:"Custom solutions",       desc:"Every project is unique. We adapt our solutions to your constraints and ambitions." },
@@ -279,14 +284,15 @@ const TR = {
     proj_desc: "A selection of solutions designed and deployed for real business needs.",
     categories: { all:"All", web:"Web & E-commerce", mobile:"Mobile & PWA", data:"Data & Monitoring", reseau:"Network & Automation" },
     projects: [
-      { desc:"Hybrid real-time network monitoring — FastAPI, SQL Server WAL, SQLite, WebSockets, Redis, Chart.js. Live infrastructure visibility." },
-      { desc:"Complete ride-hailing app: Web Admin + Mobile Android/iOS. React.js, React Native, TypeScript, FastAPI, SQLAlchemy, PostgreSQL, Redis, WebSockets." },
-      { desc:"Commercially sold e-commerce platform. PHP, MySQL, Notchpay, Flutterwave payments and WhatsApp API integration." },
-      { desc:"Modular business process automation. Python/FastAPI pipeline with a React interface for enterprise workflows." },
-      { desc:"Automated stock alerts and data analytics pipeline. Python ETL, SQL Server consolidation, Power BI reporting." },
-      { desc:"Multi-device network monitoring — BEETLE HERITAGE HOLDING. PowerShell script: ping, real-time latency, infrastructure visibility." },
-      { desc:"Full-stack dating app with authentication and profile management. Python backend, MySQL." },
-      { desc:"Event website for a beach resort in Parma, Italy. Stripe ticketing, DJ nights (Afrobeats, Coupé-décalé), pool, karaoke and B&B booking." },
+      { desc:"Internal KPI digitalisation SaaS platform deployed in production at BEETLE HERITAGE HOLDING. Full cycle: definition, assignment, automatic score calculation and multi-level validation — replacing a manual Excel-based process." },
+      { desc:"Real-time IT infrastructure monitoring system. Hybrid architecture with TTL data processing for complete visibility of servers, networks and services — live reporting and decision support." },
+      { desc:"Ride-hailing PWA (v1) migrated to an Android/iOS mobile app (v2). Web admin interface, real-time backend, booking and user management." },
+      { desc:"Successfully commercialised e-commerce platform. Dynamic interface, hybrid sales funnel with integrated mobile payment." },
+      { desc:"Modular business process automation. Intelligent pipeline with a tracking interface for enterprise workflows." },
+      { desc:"Smart multi-store inventory management and alert system. Real-time tracking, automatic alerts, Excel report export and centralised dashboard." },
+      { desc:"Network monitoring script to simultaneously test the connectivity of multiple devices. Infrastructure visibility and real-time latency display." },
+      { desc:"Full-stack dating app with authentication, messaging and profile management." },
+      { desc:"Official event website for a beach resort in Parma, Italy. Secure online ticketing, digital ticket generation with QR codes and automated contact form." },
     ],
 
     cert_eyebrow: "Skills & certifications",
