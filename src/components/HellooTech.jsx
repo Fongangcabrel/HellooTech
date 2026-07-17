@@ -34,7 +34,7 @@ const PROJECTS = [
   { name:"FlowI",             cat:"reseau", stack:["Python","FastAPI","React"],                                                         url:null },
   { name:"SSAS",              cat:"data",   stack:["Python","Flask","SQL Server"],                                                      url:null },
   { name:"SCRIPX",            cat:"reseau", stack:["PowerShell"],                                                                       url:null },
-  { name:"Hospiconnect",      cat:"mobile", stack:["React Native","FastAPI","PostgreSQL"],                                              url:null },
+  { name:"HospiConnect",      cat:"web",    stack:["PHP 8","MySQL 8","Laravel","WebSocket / SSE","Bootstrap","PHPMailer"],            url:null },
   { name:"Coco Italia Beach", cat:"web",    stack:["PHP","Stripe API"],                                                                 url:"https://www.cocoitaliabeach.com" },
 ];
 const CAT_KEYS = ["all","web","mobile","data","reseau"];
@@ -141,7 +141,7 @@ const TR = {
       { desc:"Automatisation de procédures métier modulaire. Pipeline intelligent avec interface de suivi pour les workflows d'entreprise." },
       { desc:"Application web de gestion d'inventaire multi-magasins. Interface de saisie des mouvements de stock en temps réel, alertes email automatiques en cas d'anomalie ou de rupture, génération et export de rapports Excel et tableau de bord centralisé." },
       { desc:"Script de monitoring réseau permettant de tester simultanément la connectivité de plusieurs équipements. Visibilité infrastructure et affichage de la latence en temps réel." },
-      { desc:"Application mobile de mise en relation entre patients et établissements de santé. Prise de rendez-vous en ligne, suivi des dossiers patients et gestion des soins à distance." },
+      { desc:"Application web interne de gestion hospitalière conçue pour la Clinique du Châtelet. Remplace les processus papier par une file d'attente intelligente (Standard / Prioritaire / Urgence), tickets numérotés par service, écran kiosque salle d'attente avec alertes sonores, notifications email automatiques, transferts interservices sans ressaisie et tableau de bord administrateur avec statistiques d'affluence et journal d'audit sur 12 mois." },
       { desc:"Site événementiel officiel d'un beach resort à Parme, Italie. Billetterie en ligne sécurisée, génération de billets numériques avec QR code et formulaire de contact automatisé." },
     ],
 
@@ -291,7 +291,7 @@ const TR = {
       { desc:"Modular business process automation. Intelligent pipeline with a tracking interface for enterprise workflows." },
       { desc:"Multi-store inventory management web application. Real-time stock movement entry interface, automated email alerts for anomalies or stockouts, automatic Excel report generation and export, and centralised dashboard." },
       { desc:"Network monitoring script to simultaneously test the connectivity of multiple devices. Infrastructure visibility and real-time latency display." },
-      { desc:"Mobile app connecting patients and healthcare facilities. Online appointment booking, patient record tracking and remote care management." },
+      { desc:"Internal hospital management web application designed for Clinique du Châtelet. Replaces paper-based processes with a smart queue (Standard / Priority / Emergency), service-numbered tickets, a kiosk waiting-room display with audio alerts, automated email notifications, inter-service transfers with no re-entry, and an admin dashboard with attendance statistics and a 12-month audit log." },
       { desc:"Official event website for a beach resort in Parma, Italy. Secure online ticketing, digital ticket generation with QR codes and automated contact form." },
     ],
 
