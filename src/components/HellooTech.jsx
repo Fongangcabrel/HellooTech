@@ -689,29 +689,54 @@ export default function HellooTech() {
                   </div>
                   <span style={{fontSize:10,color:MUTED,background:SURFACE,borderRadius:6,padding:"3px 8px"}}>{tr.dash_sync} · 2m</span>
                 </div>
-                {/* En-tête colonnes */}
-                <div style={{display:"grid",gridTemplateColumns:"1fr 44px 52px",gap:6,padding:"0 2px 6px",borderBottom:`1px solid ${BORDER}`,marginBottom:4}}>
-                  {["Processus / KPI","Score",""].map((h,i)=>(
-                    <span key={i} style={{fontSize:9,fontWeight:600,color:MUTED,textTransform:"uppercase",letterSpacing:".07em",textAlign:i===1?"center":"left"}}>{h}</span>
-                  ))}
-                </div>
-                {/* Lignes KPI */}
-                {[
-                  ["Taux de présence","97.2%",97.2,"#16A34A"],
-                  ["Budget réalisé","88.5%",88.5,"#F59E0B"],
-                  ["Délai livraison","95.1%",95.1,"#16A34A"],
-                  ["Qualité données","99.0%",99.0,"#16A34A"],
-                  ["Taux de validation","82.3%",82.3,"#F59E0B"],
-                ].map(([label,val,pct,color],i,arr)=>(
-                  <div key={i} style={{display:"grid",gridTemplateColumns:"1fr 44px 52px",gap:6,alignItems:"center",
-                                       padding:"7px 2px",borderBottom:i<arr.length-1?`1px solid ${BORDER}`:"none"}}>
-                    <span style={{fontFamily:"Inter",fontSize:11,color:BODY,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{label}</span>
-                    <span style={{fontFamily:"Sora",fontWeight:700,fontSize:12,color,textAlign:"center"}}>{val}</span>
-                    <div style={{height:5,borderRadius:3,background:BORDER,overflow:"hidden"}}>
-                      <div style={{height:"100%",width:`${pct}%`,borderRadius:3,background:color,transition:"width .6s ease"}}/>
+                <div style={{display:"flex",gap:12,alignItems:"flex-start"}}>
+                  {/* Tableau KPI */}
+                  <div style={{flex:1,minWidth:0}}>
+                    <div style={{display:"grid",gridTemplateColumns:"1fr 44px 50px",gap:4,padding:"0 2px 5px",borderBottom:`1px solid ${BORDER}`,marginBottom:3}}>
+                      {["Processus / KPI","Score",""].map((h,i)=>(
+                        <span key={i} style={{fontSize:9,fontWeight:600,color:MUTED,textTransform:"uppercase",letterSpacing:".07em",textAlign:i===1?"center":"left"}}>{h}</span>
+                      ))}
+                    </div>
+                    {[
+                      ["Taux de présence","97.2%",97.2,"#16A34A"],
+                      ["Budget réalisé","88.5%",88.5,"#F59E0B"],
+                      ["Délai livraison","95.1%",95.1,"#16A34A"],
+                      ["Qualité données","99.0%",99.0,"#16A34A"],
+                      ["Taux de validation","82.3%",82.3,"#F59E0B"],
+                    ].map(([label,val,pct,color],i,arr)=>(
+                      <div key={i} style={{display:"grid",gridTemplateColumns:"1fr 44px 50px",gap:4,alignItems:"center",
+                                           padding:"6px 2px",borderBottom:i<arr.length-1?`1px solid ${BORDER}`:"none"}}>
+                        <span style={{fontFamily:"Inter",fontSize:10.5,color:BODY,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{label}</span>
+                        <span style={{fontFamily:"Sora",fontWeight:700,fontSize:11,color,textAlign:"center"}}>{val}</span>
+                        <div style={{height:4,borderRadius:3,background:BORDER,overflow:"hidden"}}>
+                          <div style={{height:"100%",width:`${pct}%`,borderRadius:3,background:color}}/>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Donut chart */}
+                  <div style={{flexShrink:0,display:"flex",flexDirection:"column",alignItems:"center",gap:10,paddingTop:2}}>
+                    <div style={{position:"relative",width:72,height:72}}>
+                      <div style={{width:"100%",height:"100%",borderRadius:"50%",
+                        background:"conic-gradient(#16A34A 0deg 216deg, #F59E0B 216deg 360deg)",
+                        boxShadow:"0 4px 14px rgba(22,163,74,.2)"}}/>
+                      <div style={{position:"absolute",inset:"23%",borderRadius:"50%",background:WHITE,
+                        display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:0}}>
+                        <span style={{fontFamily:"Sora",fontWeight:800,fontSize:15,color:INK,lineHeight:1}}>5</span>
+                        <span style={{fontFamily:"Inter",fontSize:8,color:MUTED,lineHeight:1}}>KPIs</span>
+                      </div>
+                    </div>
+                    <div style={{display:"flex",flexDirection:"column",gap:5}}>
+                      {[["#16A34A","OK · 3"],["#F59E0B","Alerte · 2"]].map(([c,l],i)=>(
+                        <div key={i} style={{display:"flex",alignItems:"center",gap:5}}>
+                          <div style={{width:8,height:8,borderRadius:2,background:c,flexShrink:0}}/>
+                          <span style={{fontSize:10,color:BODY,fontFamily:"Inter",whiteSpace:"nowrap"}}>{l}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                ))}
+                </div>
               </div>
 
             </div>
