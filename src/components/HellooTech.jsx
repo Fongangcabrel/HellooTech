@@ -30,7 +30,7 @@ const PROJECTS = [
   { name:"KPIFlow",           cat:"web",    stack:["FastAPI","PostgreSQL","SQLAlchemy","Jinja2","Nginx","Debian"],                      url:null },
   { name:"VYNTIX",            cat:"data",   stack:["FastAPI","SQL Server","SQLite","Redis","WebSockets","Pandas"],                      url:null },
   { name:"SMARTY",            cat:"mobile", stack:["React Native","TypeScript","FastAPI","SQLAlchemy","PostgreSQL","Redis"],            url:null },
-  { name:"cocosecret.store",  cat:"web",    stack:["PHP","Notchpay API"],                                                              url:"https://cocosecret.store/landing.php" },
+  { name:"cocosecret.shop",   cat:"web",    stack:["PHP","Notchpay API"],                                                              url:"https://cocosecret.store/landing.php" },
   { name:"FlowI",             cat:"reseau", stack:["Python","FastAPI","React"],                                                         url:null },
   { name:"SSAS",              cat:"data",   stack:["Python","Flask","SQL Server"],                                                      url:null },
   { name:"SCRIPX",            cat:"reseau", stack:["PowerShell"],                                                                       url:null },
@@ -152,7 +152,7 @@ const TR = {
     test_h2: "Ce que disent nos clients",
     testimonials: [
       { quote:"HellooTech a complètement restructuré notre système de données. Les rapports sont devenus clairs, fiables et accessibles à tous nos décideurs. Un travail méthodique et remarquablement professionnel.", name:"Directeur Système et Information", role:"Beetle Heritage Holding · Douala" },
-      { quote:"Notre boutique en ligne a été livrée dans les délais avec toutes les fonctionnalités demandées. Dès le lancement, les commandes ont afflué. Une équipe réactive et à l'écoute.", name:"Développeur de Marché", role:"Commerce · cocosecret" },
+      { quote:"Notre boutique en ligne a été livrée dans les délais avec toutes les fonctionnalités demandées. Dès le lancement, les commandes ont afflué. Une équipe réactive et à l'écoute.", name:"Développeur de Marché", role:"Commerce · cocosecret.shop" },
       { quote:"Notre équipe réseau dispose enfin d'une vue d'ensemble en temps réel. Les incidents sont détectés et traités bien plus rapidement qu'avant. Travail rigoureux, résultats concrets.", name:"Administrateur Réseau", role:"Beetle Heritage Holding · Douala" },
       { quote:"Le site a été livré rapidement avec tout ce qu'il fallait pour gérer nos soirées et nos réservations. Nos clients adorent l'expérience en ligne !", name:"Event Planner", role:"Événement · CoCo Italia Beach" },
     ],
@@ -302,7 +302,7 @@ const TR = {
     test_h2: "What our clients say",
     testimonials: [
       { quote:"HellooTech completely restructured our data system. Reports are now clear, reliable and accessible to all our decision-makers. Methodical and remarkably professional work.", name:"Director of Information Systems", role:"Beetle Heritage Holding · Douala" },
-      { quote:"Our online store was delivered on time with every feature we asked for. Orders started coming in from day one. A responsive and attentive team.", name:"Market Developer", role:"Commerce · cocosecret" },
+      { quote:"Our online store was delivered on time with every feature we asked for. Orders started coming in from day one. A responsive and attentive team.", name:"Market Developer", role:"Commerce · cocosecret.shop" },
       { quote:"Our network team finally has a real-time overview of everything. Incidents are detected and handled far faster than before. Rigorous work, concrete results.", name:"Network Administrator", role:"Beetle Heritage Holding · Douala" },
       { quote:"The website was delivered quickly with everything needed to manage our events and bookings. Our clients love the online experience!", name:"Event Planner", role:"Events · CoCo Italia Beach" },
     ],
