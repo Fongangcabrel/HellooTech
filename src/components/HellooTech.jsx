@@ -848,13 +848,13 @@ html{scroll-behavior:smooth;}
   .sg{grid-template-columns:1fr 1fr !important;}
   .pg{grid-template-columns:1fr 1fr !important;}
   .hero-grid,.two-col{grid-template-columns:1fr !important;}
-  .hero-visual{display:none !important;}
+  .hero-visual{width:100%;max-width:540px;justify-self:center;margin-top:12px;}
   .nd{display:none !important;}
   .nm{display:flex !important;}
   .foot-grid{grid-template-columns:1fr 1fr !important;}
   .lev-row{grid-template-columns:1fr;gap:28px;}
   .lev-row.rev .lev-img{order:0;}
-  .lev-img{max-width:420px;margin:0 auto;}
+  .lev-img{max-width:340px;margin:0 auto;}
   .faq-illu{display:none !important;}
   .galg{grid-template-columns:1fr 1fr !important;}
   .blog-feat{grid-template-columns:1fr !important;}
@@ -862,15 +862,42 @@ html{scroll-behavior:smooth;}
   .cta-illu{display:none !important;}
 }
 @media(max-width:640px){
-  .sg,.pg,.galg,.bg3,.tipg{grid-template-columns:1fr !important;}
-  .galg{grid-auto-rows:260px !important;}
-  .gal-wide{grid-column:auto;}
+  /* espacements plus serrés */
+  .h-root section:not(#top):not(.band){padding-top:64px !important;padding-bottom:64px !important;padding-left:16px !important;padding-right:16px !important;}
+  #top{padding-top:112px !important;padding-bottom:56px !important;}
+  .tech-desc:empty{min-height:14px !important;}
+  .lev-img{max-width:280px;}
+  /* carrousels à balayer au lieu de longues listes */
+  .sg,.pg,.tipg,.bg3{display:flex !important;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px !important;margin:0 -16px;padding:6px 16px 18px;scrollbar-width:thin;-webkit-overflow-scrolling:touch;}
+  .sg>*,.pg>*,.tipg>*,.bg3>*{flex:0 0 86%;scroll-snap-align:center;min-width:0;}
+  .s-card:hover,.p-card:hover,.tip:hover,.b-card:hover{transform:none;}
+  /* filtres des projets sur une ligne */
+  .filters{flex-wrap:nowrap !important;justify-content:flex-start !important;overflow-x:auto;margin:0 -16px 24px !important;padding:2px 16px 8px;scrollbar-width:none;}
+  .filters::-webkit-scrollbar{display:none;}
+  .filt{flex-shrink:0;}
+  /* chiffres clés */
+  .statg>*{padding:20px 10px !important;min-width:0;}
+  .stat-v{font-size:1.55rem !important;white-space:normal !important;}
+  /* coulisses : grille 2 colonnes */
+  .galg{grid-template-columns:1fr 1fr !important;grid-auto-rows:190px !important;gap:10px !important;}
+  .gal-wide{grid-column:span 2 !important;}
+  .gal-card figcaption{font-size:11.5px !important;padding:28px 10px 10px !important;line-height:1.35 !important;}
+  /* contact */
+  .cta-box{padding:36px 22px !important;border-radius:22px !important;}
+  .cta-box h2{font-size:1.65rem !important;}
+  .blog-feat .b-cover{min-height:200px !important;}
+
   .t-grid{grid-template-columns:1fr;text-align:center;gap:24px;}
   .t-avatar{width:96px;height:96px;font-size:28px;margin:0 auto;}
   .mark{white-space:normal;}
   .statg{grid-template-columns:1fr 1fr !important;}
   .procg{grid-template-columns:1fr !important;}
-  .pillg{grid-template-columns:1fr !important;}
+  .pillg{grid-template-columns:1fr 1fr !important;gap:10px !important;}
+  .pillg>*{padding:16px !important;}
+  .pillg h3{font-size:.9rem !important;}
+  .pillg p{font-size:.78rem !important;}
+  .about-badge{left:10px !important;top:12px !important;}
+  .t-ctrl{justify-content:center;}
   .foot-grid{grid-template-columns:1fr !important;}
   .cmp-head{display:none !important;}
   .cmp-row{grid-template-columns:1fr !important;}
@@ -1231,7 +1258,7 @@ export default function HellooTech() {
       </section>
 
       {/* ───── TECH MARQUEE + CLIENTS ───── */}
-      <section style={{borderTop:`1px solid ${BORDER}`,borderBottom:`1px solid ${BORDER}`,background:WHITE,overflow:"hidden",paddingTop:24}}>
+      <section className="band" style={{borderTop:`1px solid ${BORDER}`,borderBottom:`1px solid ${BORDER}`,background:WHITE,overflow:"hidden",paddingTop:24}}>
         <p style={{textAlign:"center",fontSize:12,color:MUTED,marginBottom:16,letterSpacing:".04em"}}>{tr.trust_label}</p>
         <div style={{position:"relative",maskImage:"linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)",WebkitMaskImage:"linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)"}}
           onMouseEnter={()=>setMarqPaused(true)} onMouseLeave={()=>{setMarqPaused(false);setHovTech(null);}}>
@@ -1250,7 +1277,7 @@ export default function HellooTech() {
             })}
           </div>
         </div>
-        <div style={{minHeight:68,display:"flex",alignItems:"center",justifyContent:"center",padding:"0 24px"}}>
+        <div className="tech-desc" style={{minHeight:68,display:"flex",alignItems:"center",justifyContent:"center",padding:"0 24px"}}>
           {hovTech!==null && (
             <div className="rise" style={{display:"flex",alignItems:"flex-start",gap:10,maxWidth:580,background:WHITE,border:`1.5px solid ${TECH_COLORS[hovTech]}40`,borderLeft:`3px solid ${TECH_COLORS[hovTech]}`,borderRadius:10,padding:"10px 16px",boxShadow:`0 4px 20px ${TECH_COLORS[hovTech]}1A`}}>
               <p style={{fontSize:13,lineHeight:1.6,color:BODY}}>
@@ -1391,7 +1418,7 @@ export default function HellooTech() {
           <div className="statg" style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:18}}>
             {tr.stats.map((s,i)=>(
               <div key={i} style={{textAlign:"center",background:SURFACE,border:`1px solid ${BORDER}`,borderRadius:18,padding:"28px 18px"}}>
-                <div style={{fontFamily:"Sora",fontSize:"2.4rem",fontWeight:700,color:SKY,letterSpacing:"-.03em",whiteSpace:"nowrap"}}>
+                <div className="stat-v" style={{fontFamily:"Sora",fontSize:"2.4rem",fontWeight:700,color:SKY,letterSpacing:"-.03em",whiteSpace:"nowrap"}}>
                   <Counter value={s.value} prefix={s.prefix} suffix={s.suffix}/>
                 </div>
                 <div style={{fontSize:13.5,color:BODY,marginTop:8,lineHeight:1.5}}>{s.label}</div>
@@ -1405,7 +1432,7 @@ export default function HellooTech() {
       <section id="projets" style={{padding:"96px 24px",background:SURFACE}}>
         <div style={{maxWidth:1200,margin:"0 auto"}}>
           <SectionHead eyebrow={tr.proj_eyebrow} title={tr.proj_h2} desc={tr.proj_desc} mb={36}/>
-          <div style={{display:"flex",gap:10,justifyContent:"center",flexWrap:"wrap",marginBottom:36}}>
+          <div className="filters" style={{display:"flex",gap:10,justifyContent:"center",flexWrap:"wrap",marginBottom:36}}>
             {CAT_KEYS.map(k=>(
               <button key={k} aria-pressed={filter===k} className={`filt ${filter===k?"on":""}`} onClick={()=>setFilter(k)}>{tr.categories[k]}</button>
             ))}
@@ -1496,7 +1523,7 @@ export default function HellooTech() {
             <div className="about-photo">
               <img src="/about/fondateur.webp" alt={tr.about_photo_alt} loading="lazy"/>
             </div>
-            <div className="floaty" style={{position:"absolute",top:28,left:-26,background:WHITE,border:`1px solid ${BORDER}`,borderRadius:16,padding:"12px 16px",boxShadow:"0 18px 40px rgba(11,18,32,.14)",textAlign:"center"}}>
+            <div className="floaty about-badge" style={{position:"absolute",top:28,left:-26,background:WHITE,border:`1px solid ${BORDER}`,borderRadius:16,padding:"12px 16px",boxShadow:"0 18px 40px rgba(11,18,32,.14)",textAlign:"center"}}>
               <div style={{fontFamily:"Sora",fontSize:"1.7rem",fontWeight:700,color:SKY,lineHeight:1}}>10</div>
               <div style={{fontSize:11.5,color:BODY,marginTop:4}}>{tr.about_badge}</div>
             </div>
@@ -1613,7 +1640,7 @@ export default function HellooTech() {
                 <div style={{fontSize:13,color:"rgba(255,255,255,.6)",marginTop:4}}>{t0.role}</div>
               </div>
             </div>
-            <div style={{display:"flex",alignItems:"center",gap:14,marginTop:36}}>
+            <div className="t-ctrl" style={{display:"flex",alignItems:"center",gap:14,marginTop:36}}>
               <button className="t-nav" onClick={()=>tStep(-1)} aria-label="←"><ChevronLeft size={18}/></button>
               <div style={{display:"flex",gap:8}}>
                 {tr.testimonials.map((_,i)=>(
@@ -1742,7 +1769,7 @@ export default function HellooTech() {
 
       {/* ───── CTA ───── */}
       <section id="contact" style={{padding:"24px 24px 90px"}}>
-        <div style={{maxWidth:1100,margin:"0 auto",background:`linear-gradient(135deg,${SKY} 0%,${SKY_D} 100%)`,borderRadius:28,padding:"56px 48px",position:"relative",overflow:"hidden"}}>
+        <div className="cta-box" style={{maxWidth:1100,margin:"0 auto",background:`linear-gradient(135deg,${SKY} 0%,${SKY_D} 100%)`,borderRadius:28,padding:"56px 48px",position:"relative",overflow:"hidden"}}>
           <div style={{position:"absolute",top:-60,right:-40,width:260,height:260,background:"rgba(255,255,255,.1)",borderRadius:"50%"}}/>
           <div className="two-col" style={{position:"relative",display:"grid",gridTemplateColumns:"1.2fr .8fr",gap:32,alignItems:"center"}}>
             <div>
