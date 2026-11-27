@@ -80,16 +80,15 @@ const PILLAR_ICONS = [Award, Zap, Shield, Clock];
 const LEVER_IMGS   = ["levier-plateforme","levier-automatisation","levier-paiement","levier-infra"];
 
 const PROJECTS = [
-  { id:"kpiflow",      name:"KPIFlow",           cat:"web",    status:"prod",     featured:true, visual:"chart",  stack:["FastAPI","SQLAlchemy","PostgreSQL","Docker","Nginx","Grafana"] },
-  { id:"bhhaccess",    name:"BHHaccess",         cat:"web",    status:"mvp",      featured:true, visual:"badge",  stack:["FastAPI","PostgreSQL","React","TypeScript","PWA","Ed25519"] },
+  { id:"kpiflow",      name:"KPIFlow",           cat:"web",    status:"prod",     featured:true, img:"/projects/kpiflow.webp", stack:["FastAPI","SQLAlchemy","PostgreSQL","Docker","Nginx","Grafana"] },
+  { id:"bhhaccess",    name:"BHHaccess",         cat:"web",    status:"mvp",      featured:true, img:"/projects/bhhaccess.webp", logo:"/projects/bhhaccess-icon.webp", stack:["FastAPI","PostgreSQL","React","TypeScript","PWA","Ed25519"] },
   { id:"cocosecret",   name:"cocosecret.shop",   cat:"web",    status:"live",     featured:true, img:"/projects/cocosecret.webp",      url:"https://cocosecret.shop",        stack:["PHP","MySQL","Notchpay","Flutterwave","WhatsApp"] },
   { id:"cocoitalia",   name:"Coco Italia Beach", cat:"web",    status:"live",     img:"/projects/cocoitaliabeach.webp", url:"https://www.cocoitaliabeach.com", stack:["PHP","Stripe","JavaScript","MySQL"] },
   { id:"hospiconnect", name:"HospiConnect",      cat:"web",    status:"internal", visual:"queue",  stack:["PHP 8","Laravel","MySQL","WebSocket / SSE","PHPMailer"] },
-  { id:"vyntix",       name:"VYNTIX",            cat:"infra",  status:"internal", visual:"uptime", stack:["FastAPI","SQL Server","SQLite","WebSockets","Redis","Chart.js"] },
-  { id:"smarty",       name:"SMARTY",            cat:"mobile", status:"internal", visual:"map",    stack:["React Native","TypeScript","FastAPI","PostgreSQL","Redis"] },
-  { id:"ssas",         name:"SSAS",              cat:"data",   status:"internal", visual:"alerts", stack:["Python","SQL Server","SQL Server Agent","T-SQL","Power BI"] },
-  { id:"flowi",        name:"FlowI",             cat:"data",   status:"internal", visual:"flow",   stack:["Python","FastAPI","React.js","AsyncIO"] },
-  { id:"scripx",       name:"SCRIPX",            cat:"infra",  status:"internal", visual:"ping",   stack:["PowerShell","Networking","Automation"] },
+  { id:"vyntix",       name:"VYNTIX",            cat:"infra",  status:"internal", img:"/projects/vyntix.webp", stack:["FastAPI","SQL Server","SQLite","WebSockets","Redis","Chart.js"] },
+  { id:"smarty",       name:"SMARTY",            cat:"mobile", img:"/projects/smarty.webp", logo:"/projects/smarty-logo.webp", stack:["React Native","TypeScript","FastAPI","PostgreSQL","Redis"] },
+  { id:"ssas",         name:"SSAS",              cat:"data",   visual:"alerts", stack:["Python","SQL Server","SQL Server Agent","T-SQL","Power BI"] },
+  { id:"scripx",       name:"SCRIPX",            cat:"infra",  status:"internal", img:"/projects/scripx.webp", stack:["PowerShell","Networking","Automation"] },
 ];
 const CAT_KEYS = ["all","web","mobile","data","infra"];
 const STATUS_COLORS = { prod: GREEN, live: GREEN, mvp: AMBER, internal: SKY_D };
@@ -100,6 +99,7 @@ const GALLERY = [
   { src: "/coulisses/kpiflow-production.webp" },
   { src: "/coulisses/deploiement-docker.webp" },
   { src: "/coulisses/etl-sql-server.webp" },
+  { src: "/coulisses/chargeur-etl.webp" },
 ];
 
 const LANGS = ["fr","en"];
@@ -129,7 +129,7 @@ const TR = {
     techs: [
       "Langage N°1 en Data Science, IA, automatisation et backend web. Cœur de la stack HellooTech pour les ETL et APIs.",
       "Framework Python ultra-rapide pour des APIs RESTful modernes avec WebSockets, validation auto et doc intégrée.",
-      "Bibliothèque JavaScript de Meta pour des interfaces composables et réactives. Utilisée dans FlowI et BHHaccess.",
+      "Bibliothèque JavaScript de Meta pour des interfaces composables et réactives. Utilisée dans BHHaccess.",
       "Sur-ensemble typé de JavaScript qui détecte les erreurs à la compilation et fiabilise le code à grande échelle.",
       "SGBD Microsoft robuste pour les entreprises. Idéal pour les grandes volumétries transactionnelles et la BI.",
       "SGBD open-source avancé avec JSON, indexation puissante et haute dispo — backbone de KPIFlow et des apps critiques.",
@@ -159,7 +159,7 @@ const TR = {
       { title:"Remplacez vos fichiers Excel par une vraie plateforme.", desc:"Une application web sur mesure pour suivre vos indicateurs, valider à plusieurs niveaux et décider sur des chiffres fiables.", points:["Cycle complet : définition, saisie, calcul, validation","Rôles et permissions par département","Historique et traçabilité de chaque action"], proof:"Preuve : KPIFlow, utilisée dans toute l'entreprise chez BEETLE HERITAGE HOLDING." },
       { title:"Automatisez ce que vous refaites à la main.", desc:"Pipelines de données, tâches planifiées et flux Power Automate qui travaillent pendant que vos équipes se concentrent sur l'essentiel.", points:["Rapports générés et envoyés automatiquement","Alertes dès qu'un seuil critique est atteint","Tableaux de bord Power BI pour la direction"], proof:"Preuve : un rapport quotidien de 3 h transformé en tâche automatique de 5 min." },
       { title:"Vendez en ligne et encaissez en mobile money.", desc:"Boutiques et billetteries qui encaissent de vrais paiements — mobile money, carte bancaire ou commande directe sur WhatsApp.", points:["Notchpay, Flutterwave et Stripe intégrés","Confirmation de paiement en temps réel","Tunnel de vente pensé pour le mobile"], proof:"Preuve : cocosecret.shop et Coco Italia Beach vendent en ligne chaque jour." },
-      { title:"Gardez vos systèmes en ligne, 24 h/24.", desc:"Serveurs sécurisés, déploiements automatiques et surveillance continue pour repérer une panne avant vos utilisateurs.", points:["VPS et serveurs Linux administrés","Déploiement automatique à chaque mise à jour","Monitoring temps réel et alertes (Grafana)"], proof:"Preuve : VYNTIX et SCRIPX surveillent l'infrastructure de BEETLE en direct." },
+      { title:"Gardez vos systèmes en ligne, 24 h/24.", desc:"Serveurs sécurisés, déploiements automatiques et surveillance continue pour repérer une panne avant vos utilisateurs.", points:["VPS et serveurs Linux administrés","Applications conteneurisées avec Docker et déployées automatiquement","Supervision Grafana des serveurs et de leurs conteneurs, avec alertes"], proof:"Preuve : le serveur de KPIFlow et ses conteneurs Docker sont supervisés sur Grafana ; VYNTIX et SCRIPX surveillent le réseau de BEETLE en direct." },
     ],
 
     svc_eyebrow: "Nos services",
@@ -220,8 +220,7 @@ const TR = {
       hospiconnect: { client:"Clinique du Châtelet", tag:"Gestion des files d'attente hospitalières", desc:"Remplace les tickets papier et les appels à voix haute par une file intelligente, avec écran de salle d'attente et annonces vocales.", points:["Priorités standard / prioritaire / urgence","Transferts entre services sans ressaisie","Statistiques d'affluence et journal d'audit sur 12 mois"] },
       vyntix:       { client:"Outil interne", tag:"Monitoring d'infrastructure IT", desc:"Monitoring réseau hybride en temps réel : visibilité en direct sur chaque équipement et score de santé pour décider vite.", points:["Tableaux de bord live via WebSockets","Écritures sans interruption (SQL Server + SQLite)","Score de santé calculé en continu"] },
       smarty:       { client:"Produit · Mobilité", tag:"Plateforme de VTC", desc:"Back-office web et applications Android / iOS, avec suivi des chauffeurs en temps réel. Née en PWA, migrée en application mobile native.", points:["Applications React Native (Android & iOS)","Back-end FastAPI asynchrone","Suivi temps réel avec Redis"] },
-      ssas:         { client:"Outil interne", tag:"Système d'alerte de stock", desc:"Un pipeline ETL qui consolide les stocks dans SQL Server : les articles critiques sont détectés et les responsables reçoivent leur rapport chaque matin.", points:["Seuils d'alerte configurables","Traitements de nuit avec SQL Server Agent","Rapports Excel et tableaux de bord Power BI"] },
-      flowi:        { client:"Outil interne", tag:"Automatisation des processus métier", desc:"Un framework modulaire pour cartographier, planifier et enchaîner des workflows métier depuis une interface visuelle.", points:["Interface React pour dessiner les workflows","Moteur d'orchestration FastAPI asynchrone","Modules Python enfichables"] },
+      ssas:         { client:"Projet client · Data", tag:"Système d'alerte de stock", desc:"Un pipeline ETL qui consolide les stocks dans SQL Server : les articles critiques sont détectés et les responsables reçoivent leur rapport chaque matin.", points:["Seuils d'alerte configurables","Traitements de nuit avec SQL Server Agent","Rapports Excel et tableaux de bord Power BI"] },
       scripx:       { client:"BEETLE HERITAGE HOLDING", tag:"Monitoring réseau", desc:"Un outil PowerShell qui teste en même temps tous les équipements du réseau de production et affiche la latence en direct.", points:["Pannes repérées immédiatement","Interventions de l'équipe réseau plus rapides","Aucun logiciel à installer"] },
     },
 
@@ -232,6 +231,7 @@ const TR = {
       "KPIFlow en préparation de mise en production",
       "Déploiement d'une application conteneurisée avec Docker",
       "Pipeline ETL et requêtes SQL Server pour un client",
+      "Développement d'un chargeur ETL Python vers SQL Server",
     ],
 
     why_eyebrow: "Votre partenaire tech",
@@ -257,17 +257,6 @@ const TR = {
       ["Déploiement, surveillance et suivi après livraison", "Livraison, puis plus de nouvelles"],
       ["Paiement mobile money intégré nativement", "Paiement en ligne en option, souvent oublié"],
       ["Formation et documentation incluses", "Formation facturée à part, ou inexistante"],
-    ],
-
-    cert_eyebrow: "Compétences & certifications",
-    cert_h2: "Une expertise certifiée",
-    certs: [
-      "Licence Génie logiciel · Science des données · IME",
-      "BTS / HND Informatique · IME",
-      "IBM Data Science · en cours",
-      "AWS Cloud Practitioner (CLF-C02) · en cours",
-      "SAP Certified Associate · SAP BTP · en cours",
-      "Scrum · Kanban · Docker · CI/CD · DevSecOps",
     ],
 
     test_eyebrow: "Ils nous font confiance",
@@ -344,7 +333,7 @@ const TR = {
     techs: [
       "The #1 language for Data Science, AI, automation and web backends. Core of the HellooTech stack for ETL and APIs.",
       "Ultra-fast Python framework for modern RESTful APIs with WebSockets, automatic validation and built-in documentation.",
-      "Meta's JavaScript library for composable and reactive interfaces. Used in FlowI and BHHaccess.",
+      "Meta's JavaScript library for composable and reactive interfaces. Used in BHHaccess.",
       "Typed superset of JavaScript that catches errors at compile time and makes large-scale code more reliable.",
       "Microsoft's enterprise-grade RDBMS. Built for high-volume transactional data and business intelligence.",
       "Advanced open-source RDBMS with JSON, powerful indexing and high availability — backbone of KPIFlow and critical apps.",
@@ -374,7 +363,7 @@ const TR = {
       { title:"Replace your Excel files with a real platform.", desc:"A custom web application to track your indicators, validate at several levels and decide on reliable figures.", points:["Full cycle: definition, input, scoring, validation","Roles and permissions per department","History and traceability of every action"], proof:"Proof: KPIFlow, used company-wide at BEETLE HERITAGE HOLDING." },
       { title:"Automate what you keep doing by hand.", desc:"Data pipelines, scheduled jobs and Power Automate flows that work while your teams focus on what matters.", points:["Reports generated and sent automatically","Alerts as soon as a critical threshold is reached","Power BI dashboards for management"], proof:"Proof: a 3-hour daily report turned into a 5-minute automated job." },
       { title:"Sell online and get paid with mobile money.", desc:"Shops and ticketing sites that collect real payments — mobile money, bank card or direct ordering on WhatsApp.", points:["Notchpay, Flutterwave and Stripe built in","Real-time payment confirmation","Mobile-first checkout"], proof:"Proof: cocosecret.shop and Coco Italia Beach sell online every day." },
-      { title:"Keep your systems online, 24/7.", desc:"Secured servers, automated deployments and continuous monitoring to catch an outage before your users do.", points:["Managed VPS and Linux servers","Automatic deployment on every update","Real-time monitoring and alerts (Grafana)"], proof:"Proof: VYNTIX and SCRIPX monitor BEETLE's infrastructure live." },
+      { title:"Keep your systems online, 24/7.", desc:"Secured servers, automated deployments and continuous monitoring to catch an outage before your users do.", points:["Managed VPS and Linux servers","Docker-containerised apps with automatic deployment","Grafana monitoring of servers and their containers, with alerts"], proof:"Proof: the KPIFlow server and its Docker containers are monitored in Grafana; VYNTIX and SCRIPX watch BEETLE's network live." },
     ],
 
     svc_eyebrow: "Our services",
@@ -435,8 +424,7 @@ const TR = {
       hospiconnect: { client:"Clinique du Châtelet", tag:"Hospital queue management", desc:"Replaces paper tickets and shouted names with a smart queue, a waiting-room screen and voice announcements.", points:["Standard / priority / emergency levels","Inter-department transfers with no re-entry","Attendance statistics and a 12-month audit log"] },
       vyntix:       { client:"Internal tool", tag:"IT infrastructure monitoring", desc:"Real-time hybrid network monitoring: live visibility on every device and a health score to decide fast.", points:["Live dashboards via WebSockets","Uninterrupted writes (SQL Server + SQLite)","Continuously computed health score"] },
       smarty:       { client:"Product · Mobility", tag:"Ride-hailing platform", desc:"Web back-office and Android / iOS apps with real-time driver tracking. Born as a PWA, migrated to a native mobile app.", points:["React Native apps (Android & iOS)","Asynchronous FastAPI back-end","Real-time tracking with Redis"] },
-      ssas:         { client:"Internal tool", tag:"Stock alert system", desc:"An ETL pipeline consolidating stock data in SQL Server: critical items are detected and managers get their report every morning.", points:["Configurable alert thresholds","Nightly jobs with SQL Server Agent","Excel reports and Power BI dashboards"] },
-      flowi:        { client:"Internal tool", tag:"Business process automation", desc:"A modular framework to map, schedule and chain business workflows from a visual interface.", points:["React interface to draw workflows","Asynchronous FastAPI orchestration engine","Pluggable Python modules"] },
+      ssas:         { client:"Client project · Data", tag:"Stock alert system", desc:"An ETL pipeline consolidating stock data in SQL Server: critical items are detected and managers get their report every morning.", points:["Configurable alert thresholds","Nightly jobs with SQL Server Agent","Excel reports and Power BI dashboards"] },
       scripx:       { client:"BEETLE HERITAGE HOLDING", tag:"Network monitoring", desc:"A PowerShell tool that pings every device on the production network at once and shows latency live.", points:["Outages spotted immediately","Faster network team interventions","Nothing to install"] },
     },
 
@@ -447,6 +435,7 @@ const TR = {
       "KPIFlow being prepared for production",
       "Deploying a containerised application with Docker",
       "ETL pipeline and SQL Server queries for a client",
+      "Building a Python ETL loader for SQL Server",
     ],
 
     why_eyebrow: "Your tech partner",
@@ -472,17 +461,6 @@ const TR = {
       ["Deployment, monitoring and follow-up after delivery", "Delivery, then silence"],
       ["Mobile money payments built in natively", "Online payment optional, often forgotten"],
       ["Training and documentation included", "Training billed separately, or none"],
-    ],
-
-    cert_eyebrow: "Skills & certifications",
-    cert_h2: "Certified expertise",
-    certs: [
-      "Bachelor in Software Engineering · Data Science · IME",
-      "BTS / HND in Computer Science · IME",
-      "IBM Data Science · in progress",
-      "AWS Cloud Practitioner (CLF-C02) · in progress",
-      "SAP Certified Associate · SAP BTP · in progress",
-      "Scrum · Kanban · Docker · CI/CD · DevSecOps",
     ],
 
     test_eyebrow: "Trusted by clients",
@@ -735,41 +713,11 @@ function ProjectVisual({ p }) {
         </div>
       );
       break;
-    case "badge": {
-      // Motif décoratif façon QR (non décodable)
-      const cells = Array.from({ length: 49 }, (_, i) => ((i * 7919) % 11) % 3 === 0);
-      body = (
-        <div style={{ display: "flex", alignItems: "center", gap: 14, background: WHITE, borderRadius: 12, padding: 12, boxShadow: "0 14px 34px rgba(11,18,32,.25)" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(7,9px)", gap: 1.5, padding: 5, border: `1px solid ${BORDER}`, borderRadius: 6 }}>
-            {cells.map((on, i) => <span key={i} style={{ width: 9, height: 9, borderRadius: 1.5, background: on ? INK : SKY_100 }} />)}
-          </div>
-          <div style={{ fontFamily: "Inter", fontSize: 10, color: BODY, lineHeight: 1.6 }}>
-            <div style={{ fontFamily: "Sora", fontWeight: 700, fontSize: 12, color: INK }}>DEMO-001</div>
-            <div>Zones A · C</div>
-            <div style={{ color: GREEN, fontWeight: 600 }}>● Autorisé</div>
-          </div>
-        </div>
-      );
-      break;
-    }
     case "queue":
       body = win([row("A-012", "URGENCE", RED), row("B-034", "PRIORITAIRE", AMBER), row("C-101", "STANDARD", SKY_D)]);
       break;
-    case "uptime":
-      body = win([row("SRV-01", "● 99.9%", GREEN), row("SRV-02", "● 99.7%", GREEN), row("SW-CORE", "● 100%", GREEN)]);
-      break;
     case "alerts":
       body = win([row("SKU-2041", "▼ 3 u.", RED), row("SKU-1187", "▼ 12 u.", AMBER), row("SKU-0932", "OK", GREEN)]);
-      break;
-    case "ping":
-      body = (
-        <div style={{ width: "78%", background: INK, borderRadius: 10, padding: "12px 14px", fontFamily: "JetBrains Mono", fontSize: 10, lineHeight: 1.8, color: "#CBD5E1", boxShadow: "0 14px 34px rgba(0,0,0,.35)" }}>
-          <div style={{ color: SKY_L }}>PS&gt; scripx --live</div>
-          <div>SRV-01 <span style={{ color: "#4ADE80" }}>4 ms</span></div>
-          <div>AP-03 &nbsp;<span style={{ color: "#4ADE80" }}>9 ms</span></div>
-          <div>PRN-07 <span style={{ color: "#F87171" }}>timeout</span></div>
-        </div>
-      );
       break;
     case "map":
       body = (
@@ -783,18 +731,6 @@ function ProjectVisual({ p }) {
             <circle cx="170" cy="20" r="7" fill={SKY_D} />
             <circle cx="170" cy="20" r="3" fill="#fff" />
           </svg>
-        </div>
-      );
-      break;
-    case "flow":
-      body = (
-        <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-          {["Extract", "Transform", "Notify"].map((t, i) => (
-            <div key={t} style={{ display: "flex", alignItems: "center", gap: 6 }}>
-              <div style={{ background: WHITE, borderRadius: 8, padding: "9px 10px", fontFamily: "Sora", fontSize: 10, fontWeight: 600, color: INK, boxShadow: "0 10px 24px rgba(11,18,32,.25)" }}>{t}</div>
-              {i < 2 && <ArrowRight size={14} color="#fff" />}
-            </div>
-          ))}
         </div>
       );
       break;
@@ -1186,11 +1122,15 @@ export default function HellooTech() {
                     {p.img
                       ? <img src={p.img} alt={p.name} loading="lazy" style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"top",display:"block"}}/>
                       : <ProjectVisual p={p}/>}
+                    {p.logo && (
+                      <img src={p.logo} alt={`Logo ${p.name}`} loading="lazy"
+                        style={{position:"absolute",left:12,bottom:12,width:52,height:52,objectFit:"contain",background:WHITE,borderRadius:13,padding:4,boxShadow:"0 8px 20px rgba(11,18,32,.25)"}}/>
+                    )}
                     <div style={{position:"absolute",top:12,left:12,right:12,display:"flex",justifyContent:"space-between",gap:8}}>
-                      <span style={{display:"inline-flex",alignItems:"center",gap:6,background:"rgba(255,255,255,.95)",borderRadius:999,padding:"4px 10px",fontSize:11,fontWeight:600,color:INK}}>
+                      {p.status ? <span style={{display:"inline-flex",alignItems:"center",gap:6,background:"rgba(255,255,255,.95)",borderRadius:999,padding:"4px 10px",fontSize:11,fontWeight:600,color:INK}}>
                         <span className={p.status==="prod"||p.status==="live"?"live-dot":""} style={{width:7,height:7,borderRadius:"50%",background:STATUS_COLORS[p.status],display:"inline-block"}}/>
                         {tr.status[p.status]}
-                      </span>
+                      </span> : <span/>}
                       {p.featured && <span style={{background:INK,color:"#fff",borderRadius:999,padding:"4px 10px",fontSize:11,fontWeight:600}}>★ {tr.featured}</span>}
                     </div>
                   </div>
@@ -1226,7 +1166,7 @@ export default function HellooTech() {
       <section style={{padding:"96px 24px",background:WHITE}}>
         <div style={{maxWidth:1200,margin:"0 auto"}}>
           <SectionHead eyebrow={tr.gal_eyebrow} title={tr.gal_h2} desc={tr.gal_desc} mb={44}/>
-          <div className="galg" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:18}}>
+          <div className="galg" style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:16}}>
             {GALLERY.map((g,i)=>(
               <figure key={g.src} className="gal-card">
                 <img src={g.src} alt={tr.gallery[i]} loading="lazy"/>
@@ -1284,26 +1224,15 @@ export default function HellooTech() {
         </div>
       </section>
 
-      {/* ───── CERTIFICATIONS ───── */}
-      <section style={{padding:"70px 24px",background:WHITE,borderBottom:`1px solid ${BORDER}`}}>
-        <div style={{maxWidth:1100,margin:"0 auto",textAlign:"center"}}>
-          <span className="eyebrow">{tr.cert_eyebrow}</span>
-          <h2 className="h2" style={{fontSize:"1.8rem",fontWeight:700,margin:"12px 0 32px"}}>{tr.cert_h2}</h2>
-          <div style={{display:"flex",gap:12,flexWrap:"wrap",justifyContent:"center"}}>
-            {tr.certs.map((c,i)=>(
-              <div key={i} style={{display:"flex",alignItems:"center",gap:9,background:SURFACE,border:`1px solid ${BORDER}`,borderRadius:12,padding:"13px 18px"}}>
-                <div style={{width:22,height:22,borderRadius:6,background:SKY_50,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}><Check size={13} color={SKY_D}/></div>
-                <span style={{fontFamily:"Sora",fontSize:13.5,fontWeight:500,color:INK}}>{c}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ───── TÉMOIGNAGES ───── */}
-      <section style={{padding:"96px 24px",maxWidth:880,margin:"0 auto",textAlign:"center"}}>
-        <span className="eyebrow">{tr.test_eyebrow}</span>
-        <h2 className="sec-h2" style={{margin:"14px 0 44px"}}>{tr.test_h2}</h2>
+      <section style={{padding:"96px 24px"}}>
+        <div className="two-col" style={{maxWidth:1200,margin:"0 auto",display:"grid",gridTemplateColumns:".85fr 1.15fr",gap:56,alignItems:"center"}}>
+        <div>
+          <span className="eyebrow">{tr.test_eyebrow}</span>
+          <h2 className="sec-h2" style={{margin:"14px 0 24px"}}>{tr.test_h2}</h2>
+          <div className="faq-illu"><Illu name="temoignages"/></div>
+        </div>
+        <div style={{textAlign:"center"}}>
         <div aria-live="polite" style={{background:WHITE,border:`1px solid ${BORDER}`,borderRadius:20,padding:"44px 40px",boxShadow:"0 18px 50px rgba(11,18,32,.05)",minHeight:230,display:"flex",flexDirection:"column",justifyContent:"center"}}>
           <div style={{display:"flex",gap:3,justifyContent:"center",marginBottom:22}} aria-hidden="true">{[1,2,3,4,5].map(i=><Star key={i} size={18} fill={SKY} color={SKY}/>)}</div>
           <p style={{fontFamily:"Sora",fontSize:"1.2rem",lineHeight:1.6,color:INK,fontWeight:500,marginBottom:26}}>« {tr.testimonials[tIdx].quote} »</p>
@@ -1316,6 +1245,8 @@ export default function HellooTech() {
           {tr.testimonials.map((_,i)=>(
             <button key={i} aria-label={`${i+1}`} aria-current={i===tIdx} onClick={()=>setTIdx(i)} style={{width:i===tIdx?28:8,height:8,borderRadius:999,border:"none",background:i===tIdx?SKY:BORDER,cursor:"pointer",transition:"all .3s",padding:0}}/>
           ))}
+        </div>
+        </div>
         </div>
       </section>
 
